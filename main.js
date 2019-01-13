@@ -12,33 +12,35 @@ const sounds={
 108:"tom",
 }
 
-const channel1=[];
-const channel2=[];
-const channel3=[];
-const channel4=[];
-
+const channels={
+    channel1:[],
+    channel2:[],
+    channel3:[],
+    channel4:[]
+   }
 let isRecording=false;
 let recStartTime=0;
-
+let radioList;
 function appStart(){
 
     window.addEventListener('keypress',playSound);
     document.querySelector('#rec').addEventListener('click',recAudio);
     document.querySelector('#play').addEventListener('click',playAudio);
  
+    radioList=document.querySelectorAll(".radio-check");
 
+    radioList.forEach(input=>{
+            input.addEventListener('change',checkChange)
+               
+        })
+    
+        function checkChange(e){
+    e.target.dataset.channel1
+        }
+     
  
 } 
 
-let a=document.querySelectorAll(".check");
-    a.forEach(input=>{
-        input.addEventListener('change',checkChange)
-            
-    })
-
-    function checkChange(e){
-e.target.dataset.channel1
-    }
 
 
 
@@ -59,7 +61,7 @@ channel1.forEach(sound =>{
 function recAudio(e){
 isRecording=!isRecording;
 recStartTime=Date.now();
-e.target.innerHTML=isRecording?'Zatrzymaj':'Nagrywaj';
+e.target.innerHTML=isRecording?'Stop':'Record';
 }
 
 function playSound(e){
@@ -80,12 +82,18 @@ const soundName = sounds[e.charCode];
 
 if(isRecording){
 
-channel1.push(
-    {
-name: soundName,
-time:Date.now() - recStartTime
-}
-)
+    for(let i=0;i<radioList.length;i++){
+
+        if(radioList[i].checked===true){
+      channels["channel"+(i+1)].push(
+          {
+      name: soundName,
+      time:Date.now() - recStartTime
+      }
+      )
+      }
+      else continue
+      }
 }
 
 
