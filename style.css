@@ -90,7 +90,7 @@ li{
     font-size: 1.3rem;
 padding-left:1rem;
 }
-.remove:hover+div{
+.remove:active+div{
     display:block;
 }
 .remove:hover,.remove:active{
