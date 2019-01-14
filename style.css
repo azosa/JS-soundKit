@@ -1,0 +1,126 @@
+@media only screen and (min-width: 768px){
+    .key{display: block;}
+    .sound-button{
+
+width: 4.5rem;
+height: 8rem;
+margin:0.7rem;
+}
+
+.sound-name{
+    font-size: 0.9rem;
+}}
+@media only screen and (max-width: 767px){
+    .key{display: none;}
+    .sound-button{
+
+width: 3.5rem;
+height: 6rem;
+margin:0.5rem;
+}
+.sound-name{
+    font-size: 0.6rem;
+}
+}
+body{background: rgb(221, 217, 217);
+    font-family: 'Open Sans', sans-serif;
+}
+.container{
+padding:2rem;
+
+}
+.key{
+    font-size:1.5rem;
+    color:red;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.channel-list{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.channel-list>li{
+list-style: none;
+padding:.5rem;
+}
+.sounds{
+    display: flex;
+    flex-direction: row;
+}
+.sounds{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.sound-button{
+    cursor: pointer;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center; 
+background-color: rgb(168, 212, 233);
+border-radius: 40% 40% 0 0;
+}
+.sound-button:active{
+    background-color: rgb(110, 156, 177);
+}
+li{
+     position: relative;
+}
+.info{
+    display: none;
+    position: absolute;
+    top:50%;
+    left:100%;
+    width:100%;
+    z-index: 1;
+    background: black;
+    opacity: .6;
+    color:white;
+    padding:.3rem;
+    font-size:.7rem;
+
+
+}
+.remove{
+   
+    font-size: 1.3rem;
+padding-left:1rem;
+}
+.remove:hover+div{
+    display:block;
+}
+.remove:hover,.remove:active{
+animation: colorChange 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}@keyframes colorChange{
+0%{ color:black;}
+50%{color:red;}
+100%{color:black;}
+
+}
+.btn{
+    width:100px;
+color:rgb(0, 0, 0);
+background:rgb(160, 160, 160);
+border:none;
+padding:0.7rem 1rem;
+margin:0.7rem;
+font-size: 1.1rem;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);  
+outline: none;
+}
+.btn:hover,.btn:active{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  
+}
+input{
+    height: 25px;
+    width: 25px;
+    background: #eee;
+}
+#check-first{
+    display: none;
+}
