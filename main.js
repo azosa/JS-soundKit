@@ -29,6 +29,8 @@ function appStart(){
 
     window.addEventListener('keypress',readKey);
 
+    document.querySelector('#rec').addEventListener('click',recAudio);
+    document.querySelector('#play').addEventListener('click',playAudio);
     document.querySelector('#rec').addEventListener('touchstart',recAudio);
     document.querySelector('#play').addEventListener('touchstart',playAudio);
     clearList=document.querySelectorAll(".remove");
@@ -45,6 +47,11 @@ function appStart(){
            audioDOM=divs[m].childNodes[1].id;
            playSound(audioDOM);
         })
+        divs[m].addEventListener("click",function(e){
+            
+            audioDOM=divs[m].childNodes[1].id;
+            playSound(audioDOM);
+         })
     }
 
 
